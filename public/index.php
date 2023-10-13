@@ -25,6 +25,9 @@ if (!empty($usuario_logado) && $rota == 'login') {
 $rotas = [
     'login' => 'login.php',
     'home' => 'home.php',
+    'page1' => 'page1.php',
+    'page2' => 'page2.php',
+    'page3' => 'page3.php',
     'logout' => 'logout.php'
 ];
 

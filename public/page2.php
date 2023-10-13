@@ -1,6 +1,5 @@
 <?php
 defined('CONTROL') or die('Acesso negado!');
-
 ?>
 
 <!DOCTYPE html>
@@ -8,14 +7,15 @@ defined('CONTROL') or die('Acesso negado!');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aplicação</title>
+    <title>Página 2</title>
 </head>
 <body>
 
     <?php require('nav.php') ?>
 
-    <h3>Bem-vindo à aplicação!</h3>
-    
+    <h3>Página 2</h3>
+    <hr>
     <p>[conteúdo]</p>
+    
 </body>
 </html>
