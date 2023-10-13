@@ -16,6 +16,11 @@ if (empty($usuario_logado)) {
     $rota = $_GET['rota'] ?? 'home';
 }
 
+// se o usuário está logado, mas a rota é login, então redireciona para home
+if (!empty($usuario_logado) && $rota == 'login') {
+    $rota = 'home';
+}
+
 // analisa as rotas
 $rotas = [
     'login' => 'login.php',

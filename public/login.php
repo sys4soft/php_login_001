@@ -12,6 +12,25 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     if(empty($usuario) || empty($senha)){
         $erro = "Usuário e senha são obrigatórios!";
     }
+
+    // verifica se o usuário e password são válidos
+    if(empty($erro)){
+        
+        $usuarios = require_once __DIR__ . '/../inc/usuarios.php';
+
+        foreach($usuarios as $user){
+            if($user['usuario'] == $usuario && password_verify($senha, $user['senha'])){
+                
+                // efetua o login
+                $_SESSION['usuario'] = $usuario;
+
+                // volta para a página inicial
+                header('location: index.php?rota=home');
+            }
+        }
+
+        $erro = "Usuário e/ou senha inválidos!";
+    }
 }
 
 ?>
