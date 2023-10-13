@@ -25,6 +25,7 @@ if (!empty($usuario_logado) && $rota == 'login') {
 $rotas = [
     'login' => 'login.php',
     'home' => 'home.php',
+    'logout' => 'logout.php'
 ];
 
 if(!array_key_exists($rota, $rotas)) {
