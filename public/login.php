@@ -1,5 +1,19 @@
 <?php
 defined('CONTROL') or die('Acesso negado!');
+
+// verifica se o formulário foi enviado
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+    // verifica se o usuário e a password foram submetidas
+    $usuario = $_POST['usuario'] ?? null;
+    $senha = $_POST['senha'] ?? null;
+    $erro = null;
+
+    if(empty($usuario) || empty($senha)){
+        $erro = "Usuário e senha são obrigatórios!";
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -25,6 +39,10 @@ defined('CONTROL') or die('Acesso negado!');
             <button type="submit">Entrar</button>
         </div>
     </form>
+
+    <?php if(!empty($erro)): ?>
+        <p style="color: red"><?= $erro ?></p>
+    <?php endif; ?>
 
 </body>
 </html>
