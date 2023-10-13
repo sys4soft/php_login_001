@@ -11,7 +11,7 @@ defined('CONTROL') or die('Acesso negado!');
 </head>
 <body>
     
-    <form action="index.php?rota=login_submit" method="post">
+    <form action="index.php?rota=login" method="post">
         <h3>Login</h3>
         <div>
             <label for="usuario">Usuário:</label>
